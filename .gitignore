@@ -1,0 +1,5 @@
+/node_modules
+/downloads
+/.prettierrc
+/cypress/integration/e2e/examples
+/cypress/videos/examples

@@ -1,0 +1,15 @@
+{
+    "watchForFileChanges": false,
+    "baseUrl":"https://demo.saleor.io/dashboard/",
+    "viewportWidth": 1732,
+    "viewportHeight":1280,
+    "waitForAnimations": true,
+    "animationDistanceThreshold": 20,
+    "defaultCommandTimeout": 5000,
+    "execTimeout": 60000,
+    "pageLoadTimeout": 60000,
+    "requestTimeout": 15000,
+    "responseTimeout": 15000,
+    "video": false,
+    "chromeWebSecurity": false
+}
