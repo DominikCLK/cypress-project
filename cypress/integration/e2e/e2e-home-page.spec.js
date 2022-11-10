@@ -1,5 +1,6 @@
 import  LoginPage  from '../../page/LoginPage.page'
 import HomePage from '../../page/HomePage.page'
+import EveryPageElements from '../../page/EveryPageElements'
 
 describe('Home page actions - e2e', () => {
 
@@ -11,17 +12,32 @@ describe('Home page actions - e2e', () => {
 
 
     it('Change currency - PLN to USD and PLN to USD', () => {
-        //Assetrion
-
+        HomePage.homePageElementsAssertion({failOnStatusCode: false})
+        EveryPageElements.sideMenuAssertion({failOnStatusCode: false})
 
         HomePage.setUsd({failOnStatusCode: false})
 
-
-        //Assetrion
-
+        HomePage.homePageElementsAssertion({failOnStatusCode: false})
+        EveryPageElements.sideMenuAssertion({failOnStatusCode: false})
         
-
         HomePage.setPln({failOnStatusCode: false})
+
+        HomePage.homePageElementsAssertion({failOnStatusCode: false})
+        EveryPageElements.sideMenuAssertion({failOnStatusCode: false})
+        
+    });
+
+    
+    it.only('Set Dark mode', () => {
+        HomePage.homePageElementsAssertion({failOnStatusCode: false})
+        EveryPageElements.sideMenuAssertion({failOnStatusCode: false})
+
+        EveryPageElements.userMenu.click()
+        EveryPageElements.darkModeCheckbox.click()
+        EveryPageElements.darkModeText.should('have.text', "Enable Dark Mode")
+
+        HomePage.homePageElementsAssertion({failOnStatusCode: false})
+        EveryPageElements.sideMenuAssertion({failOnStatusCode: false})
         
     });
 });
