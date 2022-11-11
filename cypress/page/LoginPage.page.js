@@ -39,6 +39,15 @@ export default class LoginPage {
         this.loginButton.click()
     }
 
+    static loginEnterPress(username, password) {
+        this.emailInput.clear()
+        this.passwordInput.clear()
+
+        this.emailInput.type(username)
+        this.passwordInput.type(password)
+        this.passwordInput.type('{enter}')
+    }
+
     static errorAssertion() {
         this.errorFrame.should('be.visible').and('contain', "Sorry, your username and/or password are incorrect. Please try again.")
     }
