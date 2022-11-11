@@ -1,5 +1,3 @@
-
-
 export default class LoginPage {
 
     //Header buttons
@@ -39,6 +37,15 @@ export default class LoginPage {
         this.emailInput.type(username)
         this.passwordInput.type(password)
         this.loginButton.click()
+    }
+
+    static loginEnterPress(username, password) {
+        this.emailInput.clear()
+        this.passwordInput.clear()
+
+        this.emailInput.type(username)
+        this.passwordInput.type(password)
+        this.passwordInput.type('{enter}')
     }
 
     static errorAssertion() {
