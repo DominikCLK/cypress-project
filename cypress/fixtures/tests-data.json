@@ -1,7 +1,17 @@
 {
-  "name": "",
-  "email": "admin@example.com",
-  "invalidEmail": "invalidadminn@example.com",
-  "password": "admin",
-  "invalidPassword": "invalidadmin"
+  "saleor": {
+    "name": "",
+    "email": "admin@example.com",
+    "invalidEmail": "invalidadminn@example.com",
+    "password": "admin",
+    "invalidPassword": "invalidadmin"
+
+  },
+  
+  "api": {
+      "statusMessage403": "Forbidden",
+      "statusMessage200": "OK",
+      "email": "dominik.softwaretest@gmail.com",
+      "password": "Password1!"
+  }
 }

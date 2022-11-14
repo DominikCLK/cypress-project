@@ -3,60 +3,51 @@ import  LoginPage  from '../../page/LoginPage.page'
 
 describe('Login with invalid credencials - error message', () => {
 
-    beforeEach(() => {
+    beforeEach(function(){
         cy.visit('/')
         cy.clearCookies()
+        cy.fixture("tests-data").then(data => {
+            this.credentials = data
+        })
       })
 
-    it('As user try to log in with invalid e-mail and valid password', () => {
+    it('As user try to log in with invalid e-mail and valid password', function(){
         LoginPage.visibleAssertion()
-
-        cy.fixture('tests-data.json').then((user) => {
-            LoginPage.login(user.invalidEmail, user.password)
-        })
+        LoginPage.login(this.credentials.saleor.invalidEmail, this.credentials.saleor.password)
         LoginPage.errorAssertion()
     })
 
-    it('As user try to log in with invalid e-mail and valid invalid password', () => {
+    it('As user try to log in with invalid e-mail and valid invalid password', function() {
         LoginPage.visibleAssertion()
-        
-        cy.fixture('tests-data.json').then((user) => {
-            LoginPage.login(user.invalidEmail, user.invalidPassword)
-        })
+        LoginPage.login(this.credentials.saleor.invalidEmail, this.credentials.saleor.invalidPassword)
         LoginPage.errorAssertion()
     })
 
     
-    it('As user try to log in with valid e-mail and invalid password', () => {
+    it('As user try to log in with valid e-mail and invalid password', function() {
         LoginPage.visibleAssertion()
-        
-        cy.fixture('tests-data.json').then((user) => {
-            LoginPage.login(user.email, user.invalidPassword)
-        })
+        LoginPage.login(this.credentials.saleor.email, this.credentials.saleor.invalidPassword)
         LoginPage.errorAssertion()
     })
 });
 
 describe('Login with valid credencials - success login', () => {
 
-    beforeEach(() => {
+    beforeEach(function(){
         cy.visit('/')
         cy.clearCookies()
+        cy.fixture("tests-data").then(data => {
+            this.credentials = data
+        })
       })
 
-    it('As user try to log in with valid e-mail and valid password', () => {
+    it('As user try to log in with valid e-mail and valid password', function() {
         LoginPage.visibleAssertion()
-
-        cy.fixture('tests-data.json').then((user) => {
-            LoginPage.login(user.email, user.password)
-        })
+        LoginPage.login(this.credentials.saleor.email, this.credentials.saleor.password)
     })
 
-    it('As user try to log in with valid e-mail and valid password - Keayboard press', () => {
+    it('As user try to log in with valid e-mail and valid password - Keayboard press', function() {
         LoginPage.visibleAssertion()
-
-        cy.fixture('tests-data.json').then((user) => {
-            LoginPage.loginEnterPress(user.email, user.password)
-        })
+        LoginPage.loginEnterPress(this.credentials.saleor.email, this.credentials.saleor.password)
     })
 });
