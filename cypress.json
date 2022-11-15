@@ -11,5 +11,11 @@
     "requestTimeout": 15000,
     "responseTimeout": 15000,
     "video": false,
-    "chromeWebSecurity": false
+    "chromeWebSecurity": true,
+    "theme": "dark",
+    "reporter": "cypress-multi-reporters",
+    "reporterOptions": {
+    "configFile": "reporter-config.json"
+
+}
 }

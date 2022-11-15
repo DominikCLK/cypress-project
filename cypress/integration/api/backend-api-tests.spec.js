@@ -41,5 +41,4 @@ describe("Send request directly to API", () => {
             })
         })
     })
-
-})
+});

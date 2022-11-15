@@ -3,3 +3,5 @@
 /.prettierrc
 /cypress/integration/e2e/examples
 /cypress/videos/examples
+/cypress/results
+/reporter-config.json

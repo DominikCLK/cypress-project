@@ -39,7 +39,5 @@ export default class Tools {
     static getRandomEmail(){
         let result = '@gmail.com';
         return this.getRandomName(3) + '.' + this.getRandomName(3) + (Math.floor(Math.random() * 900000) + 100000) + result;
-    }
-
-
+    }    
 }
