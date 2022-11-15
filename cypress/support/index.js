@@ -19,7 +19,8 @@ import './commands'
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 
-require('cypress-xpath')
+import 'cypress-xpath'
+import 'cypress-dark'
 
 Cypress.on('uncaught:exception', (err, runnable) => {
     // returning false here prevents Cypress from
